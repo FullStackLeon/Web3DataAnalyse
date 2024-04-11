@@ -15,7 +15,7 @@ func main() {
 		"wallet_address": "0x46efbaedc92067e6d60e84ed6395099723252496",
 	}
 
-	baseURL := consts.ApiMap["getWalletAge"]
+	baseURL := consts.ApiMap["getWalletTotalBalance"]
 	query := url.Values{}
 	for k, v := range queryParamMap {
 		query.Add(k, v)
@@ -38,12 +38,11 @@ func main() {
 	//  "message": "success",
 	//  "code": 0,
 	//  "data": {
-	//    "wallet_address": "0x46efbaedc92067e6d60e84ed6395099723252496",
-	//    "age": 1024,
-	//    "first_txn_time": "2021-06-22 16:31:21.000 UTC"
+	//    "value": 23099.92299537051
 	//  }
 	//}
 	if nil != walletInfo {
 		fmt.Println(walletInfo)
 	}
+
 }
