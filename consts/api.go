@@ -1,8 +1,10 @@
 package consts
 
 var (
-	ApiMap = map[string]string{
-		"getWalletAge":          "https://api.footprint.network/api/v3/address/getWalletAge",
-		"getWalletTotalBalance": "https://api.footprint.network/api/v3/address/getWalletTotalBalance",
+	FootPrintBaseUrl = "https://api.footprint.network/api"
+	ApiMap           = map[string]string{
+		"getWalletAge":          "/v3/address/getWalletAge",
+		"getWalletTotalBalance": "/v3/address/getWalletTotalBalance",
+		"getProtocolMetadata":   "/v2/protocol/info",
 	}
 )

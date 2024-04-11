@@ -10,12 +10,11 @@ import (
 )
 
 func main() {
+	baseURL := consts.FootPrintBaseUrl + consts.ApiMap["getWalletAge"]
 	queryParamMap := map[string]string{
 		"chain":          "Ethereum",
 		"wallet_address": "0x46efbaedc92067e6d60e84ed6395099723252496",
 	}
-
-	baseURL := consts.ApiMap["getWalletAge"]
 	query := url.Values{}
 	for k, v := range queryParamMap {
 		query.Add(k, v)
@@ -33,6 +32,9 @@ func main() {
 		return
 	}
 
+	if nil != walletInfo {
+		fmt.Println(walletInfo)
+	}
 	// 示例输出结果
 	//{
 	//  "message": "success",
@@ -43,7 +45,4 @@ func main() {
 	//    "first_txn_time": "2021-06-22 16:31:21.000 UTC"
 	//  }
 	//}
-	if nil != walletInfo {
-		fmt.Println(walletInfo)
-	}
 }
